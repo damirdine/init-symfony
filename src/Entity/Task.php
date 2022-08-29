@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -65,6 +66,83 @@ class Task
      * })
      */
     private $category;
+
+    public function getIdTask(): ?int
+    {
+        return $this->idTask;
+    }
+
+    public function getNameTask(): ?string
+    {
+        return $this->nameTask;
+    }
+
+    public function setNameTask(string $nameTask): self
+    {
+        $this->nameTask = $nameTask;
+
+        return $this;
+    }
+
+    public function getDescriptionTask(): ?string
+    {
+        return $this->descriptionTask;
+    }
+
+    public function setDescriptionTask(string $descriptionTask): self
+    {
+        $this->descriptionTask = $descriptionTask;
+
+        return $this;
+    }
+
+    public function getCreatedDateTask(): ?\DateTimeInterface
+    {
+        return $this->createdDateTask;
+    }
+
+    public function setCreatedDateTask(\DateTimeInterface $createdDateTask): self
+    {
+        $this->createdDateTask = $createdDateTask;
+
+        return $this;
+    }
+
+    public function getDueDateTask(): ?\DateTimeInterface
+    {
+        return $this->dueDateTask;
+    }
+
+    public function setDueDateTask(\DateTimeInterface $dueDateTask): self
+    {
+        $this->dueDateTask = $dueDateTask;
+
+        return $this;
+    }
+
+    public function getPriorityTask(): ?string
+    {
+        return $this->priorityTask;
+    }
+
+    public function setPriorityTask(string $priorityTask): self
+    {
+        $this->priorityTask = $priorityTask;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Categories
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Categories $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
 
 
 }

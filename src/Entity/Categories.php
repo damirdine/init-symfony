@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,6 +28,23 @@ class Categories
      * @ORM\Column(name="libelle_category", type="string", length=100, nullable=false)
      */
     private $libelleCategory;
+
+    public function getIdCategory(): ?int
+    {
+        return $this->idCategory;
+    }
+
+    public function getLibelleCategory(): ?string
+    {
+        return $this->libelleCategory;
+    }
+
+    public function setLibelleCategory(string $libelleCategory): self
+    {
+        $this->libelleCategory = $libelleCategory;
+
+        return $this;
+    }
 
 
 }
